@@ -32,8 +32,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Include sprockets
+gem 'sprockets', '~> 3.0'
+
 # Use bootstrap-sass for front-end development
 gem 'bootstrap-sass', '~> 3.3.6'
+
+# Use Simple Form
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
