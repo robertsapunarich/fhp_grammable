@@ -58,6 +58,14 @@ RSpec.describe GramsController, type: :controller do
   end
 
   describe "grams#edit action" do
+    it "shouldn't let a user who did not create a gram edit it" do
+      gram = FactoryGirl.create(:gram)
+      u = FactoryGirl.create(:user)
+      sign_in u
+      get :edit, id: gram.id
+      expect(response).to have_http_status(:forbidden)
+    end
+
     it "shouldn't let unauthenticated users edit a gram" do
       gram = FactoryGirl.create(:gram)
       get :edit, id: gram.id
