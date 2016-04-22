@@ -44,6 +44,12 @@ gem 'simple_form'
 # Use devise for user authentication
 gem 'devise'
 
+gem 'carrierwave'
+
+gem "figaro"
+
+gem "fog"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
