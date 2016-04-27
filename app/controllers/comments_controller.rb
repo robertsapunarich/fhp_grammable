@@ -1,7 +1,9 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = current_user.comments.create(comment_params)
+    @gram = Gram.find_by_id(params[:gram_id])
+    @gram.comments.create(comment_params.merge(user: current_user))
+    redirect_to root_path
   end
 
   private
